@@ -23,7 +23,7 @@ class MessagesController < ApplicationController
 
   private
   def message_params
-    params.require(:message).permit(:content).merge(user_id: current_user.id)
+    params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
     #messagesテーブルへcontentを保存するように定義/ログインしているユーザーのIDも受け取れるように定義
   end
 end
