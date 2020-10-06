@@ -16,7 +16,7 @@ class MessagesController < ApplicationController
       redirect_to  room_messages_path(@room)
       # 参加しているチャットルームに投稿したメッセージの一覧画面
     else
-      @messages = @room.messages.include(:user)
+      @messages = @room.messages.includes(:user)
       render :index
     end
   end
